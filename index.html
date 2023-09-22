@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="media-queries.css">
+    <link rel="stylesheet" href="providers.css">
+    <link rel="stylesheet" href="services.css">
     <title>Lab1</title>
 
 </head>
@@ -15,7 +22,7 @@
               <div class="logo">
                 <img src="images/logo.png" alt="logo">
               </div>
-              <ul>
+              <ul class="lul">
                 <li class="header__nav-item">
                   <a class="heaader__nav-link" href="" style="font-weight: bold; opacity: 100%;">Home</a>
                 </li>
@@ -32,13 +39,23 @@
                     <a class="heaader__nav-link" href="">About us</a>
                 </li>
               </ul>
-              <!-- <label for="menu" class="burger_menu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </label>
-              <nav class="burger_menu-nav">
-            </nav> -->
+                <!--   элемент, по которому юзер будет кликать  -->
+                  <input id="menu__toggle" type="checkbox" />
+                  <label class="burger__menu" for="menu__toggle">
+      
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </label>
+                  
+                <!--   /* наше меню */ -->
+                  <ul class="burger__navbar">
+                    <li><a class="menu__item" href="#">Home</a></li>
+                    <li><a class="menu__item" href="#">Find a doctor</a></li>
+                    <li><a class="menu__item" href="#">Apps</a></li>
+                    <li><a class="menu__item" href="#">Testimonials</a></li>
+                    <li><a class="menu__item" href="#">About us</a></li>
+                  </ul>
     </header>
     <main>
         <div class="drops">
@@ -122,26 +139,23 @@
         <div class="footer_dots_top">
           <img src="images/element (3).png" alt="dots" class="footer-top-dots">
         </div>
-        <!-- <div class="footer">
-          <nav class="footer__nav">
-            <img src="images/trafalgar.png" class="traf_img">
-            <ul>
-              <li class="footer__nav-item">
-                <a class="footer__nav-link" href="">Company</a>
-              </li>
-              <li class="footer__nav-item">
-                <a class="footer__nav-link" href="">Region</a>
-              </li>
-              <li class="footer__nav-item">
-                <a class="footer__nav-link" href="">Help</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="footer_dots_bottom">
-            <img src="images/element (3).png" alt="dots" class="footer-bottom-dots">
-          </div>
-        </div> -->
     </main>
+    <footer class="footer">
+      <div class="footer-content">
+          <img src="images/trafalgar.png" class="traf_img">
+          <ul>
+              <li class="footer__nav-item">
+                  <a class="footer__nav-link" href="">Company</a>
+              </li>
+              <li class="footer__nav-item">
+                  <a class="footer__nav-link" href="">Region</a>
+              </li>
+              <li class="footer__nav-item">
+                  <a class="footer__nav-link" href="">Help</a>
+              </li>
+          </ul>
+      </div>     
+    </footer>
 
 </body>
 

@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+}
+
+.header {
+    font-family: 'Mulish', sans-serif;
+    padding: 1rem;
+}
+
+body {
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+.header__nav {
+    justify-content: space-between;
+    width: 76%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header__nav .lul {
+    display: flex;
+    list-style-type: none;
+}
+
+.header__nav li a {
+    width: 100%;
+}
+
+.heaader__nav-link {
+    color: #1F1534;
+    margin-left: 2rem;
+    text-decoration: none;
+    opacity: 50%;
+}
+
+.drops img {
+    width: 4%;
+}
+
