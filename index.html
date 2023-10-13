@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Laptop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header_nav">
+            <div class="logo">
+                <img src="image/laptop-store-low-resolution-logo-color-on-transparent-background.png">
+            </div>
+            <div>
+                <ul class="navigation">
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="">My Laptops</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="navigation_link" href="#" id="openCreateModalButton">Create Laptop</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="type_text">
+                <input required type="text" id="searchInput" placeholder="Type somethimg...">
+            </div>
+            <a href="" class="button_search">Search</a>
+            <a href="" class="button_clear">Clear</a>
+        </nav>
+    </header>
+    
+    <main>
+        <aside>
+            <form class="aside_bar">
+                <h2>Manage Laptop</h2>
+                <div class="input_data">
+            </form>
+            <div class="sort_section">
+                <legend><h3>Sort by cheapest</h3></legend>
+                <button type="button" id="sort_button">Sort</button>
+            </div>
+            <div>
+                <h3> Count total daily expenses </h3>
+                <p id="count"><p>
+                <button type="button" id="press"> Press</button>  
+                <p class="total-div"></p>    
+            </div>
+        </aside>
+        <div class="cards_container">
+            </div>
+    </main>
+    <script src="js/index.js"></script>
+<div id="createModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeCreateModal">&times;</span>
+        <h2>Create Laptop</h2>
+        <form id="createForm">
+            <label for="model">Model:</label>
+            <input type="text" id="model" required><br><br>
+
+            <label for="screen_size">Screen Size:</label>
+            <input type="number" id="screen_size" required><br><br>
+
+            <label for="ram">RAM:</label>
+            <input type="number" id="ram" required><br><br>
+
+            <label for="storage">Storage:</label>
+            <input type="text" id="storage" required><br><br>
+
+            <label for="priceUAH">Price (UAH):</label>
+            <input type="number" id="priceUAH" required><br><br>
+
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+<div id="editModal" class="modal hidden-element">
+    <div class="modal-content">
+        <span class="close" id="closeEditModal">&times;</span>
+        <h2>Edit Laptop</h2>
+        <form id="editForm">
+            <input type="hidden" id="editIndex">
+            <label for="editModel">Model:</label>
+            <input type="text" id="editModel" required><br><br>
+
+            <label for="editScreenSize">Screen Size:</label>
+            <input type="number" step="0.1" id="editScreenSize" required><br><br>
+
+            <label for="editRam">RAM:</label>
+            <input type="number" step="0.1" id="editRam" required><br><br>
+
+            <label for="editStorage">Storage:</label>
+            <input type="text" id="editStorage" required><br><br>
+
+            <label for="editPriceUAH">Price (UAH):</label>
+            <input type="number" step="0.1" id="editPriceUAH" required><br><br>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+</body>
+
+
+
+</html>
