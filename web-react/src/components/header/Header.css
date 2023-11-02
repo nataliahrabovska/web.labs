@@ -1,0 +1,58 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    display: flex;
+    height: 20px;
+    width: 700px;
+    padding: 10px 20px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: none;
+    background: rgba(239, 107, 74, 0.30);
+  }
+  
+  input placeholder {
+    color: 1F2022;
+    font-family: Manrope;
+    font-size: 30px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-around;
+  }
+  
+  nav a {
+    text-decoration: none;
+    height: 42px;
+    color: #333;
+    margin-right: 20px;
+    color: #212224;
+    font-size: 20px;
+    border-radius: 4px;
+    background: rgba(239, 107, 74, 0.30);
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 30px;
+  }
+  .catalog {
+    height: 30px;
+    margin-right: 5px;
+  }
+  .home {
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }

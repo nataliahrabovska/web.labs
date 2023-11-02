@@ -1,0 +1,59 @@
+/* Footer.css */
+
+.footer {
+    padding: 30px 0;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    justify-content:center;
+    margin-left: 1.7rem;
+  }
+  
+  .footer .row {
+    width: 97%;
+    margin: 0;
+    padding: 0.6% 0;
+    color: gray;
+    font-size: 0.8em;
+
+  }
+  
+  .footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+  }
+  
+  .footer .row a img {
+    width: 40px; /* Налаштуйте розміри зображень за потребою */
+    height: auto; /* Дозволяє зберігати пропорції */
+    margin: 0 10px; /* Відступи навколо зображень */
+  }
+  
+  .footer .row a:hover {
+    color: #fff;
+  }
+  
+  .footer .row ul {
+    width: 100%;
+  }
+  
+  .footer .row ul li {
+    display: inline-block;
+    margin: 0 30px;
+  }
+  
+  @media (max-width: 720px) {
+    .footer {
+      text-align: left;
+      padding: 5%;
+    }
+    .footer .row ul li {
+      display: block;
+      margin: 10px 0;
+      text-align: left;
+    }
+    .footer .row a img {
+      margin: 0 3%;
+    }
+  }
+  

@@ -1,0 +1,21 @@
+.featured-laptops ul {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.featured-laptops {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.featured-laptops h3 {
+    display: flex;
+    margin-left: 8rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
