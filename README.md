@@ -14,3 +14,11 @@
 Посилання на вітку [тут]([https://google.com](https://github.com/nataliahrabovska/web_labs/tree/lab3-4)https://github.com/nataliahrabovska/web_labs/tree/lab3-4)
 
 ***
+### Лабораторна робота №5 (Варіант 4)
+Посилання на вітку [тут](https://github.com/nataliahrabovska/web_labs/tree/lab5)
+
+***
+### Лабораторна робота №6 (Варіант 4)
+Посилання на вітку [тут](https://github.com/nataliahrabovska/web_labs/tree/lab6)
+
+https://github.com/nataliahrabovska/web_labs/tree/lab6
