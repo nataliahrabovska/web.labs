@@ -1,20 +1,32 @@
 import React from 'react';
-import Header from './components/header/Header';
-import Banner from './components/banner/Banner';
-import FeaturedLaptops from './components/featured_laptops/FeaturedLaptops';
-import ButtonViewMore from './components/bvm/ButtonViewMore';
-import Footer from './components/footer/Footer';
+import Home from './routes/Home';
+import Root from './routes/Root';
+import Catalog from './routes/Catalog';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const routes = createBrowserRouter([
+  {
+    path:"/",
+    element:<Root/>,
+    children: [
+        {
+          path:"/",
+          element:<Home/>
+        },
+        {
+          path:"/catalog",
+          element:<Catalog/>
+        }
+    ]
+  }
+])
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Banner />
-      <FeaturedLaptops/>
-      <ButtonViewMore/> 
-      <Footer/> 
-
-    </div>
+    <RouterProvider router={routes}/>
   );
 };
 

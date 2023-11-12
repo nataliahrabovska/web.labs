@@ -3,16 +3,20 @@ import shoping from '../../assets/img/shopping-cart.png'
 import catalog from '../../assets/img/catalog.png'
 import home from './../../assets/img/home (1).png'
 import './Header.css';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
-      <input type={"text"} placeholder={'Search'}/>
+      <input className ={'search'} type={"text"} placeholder={'Search'}/>
       <nav>
-        <img src={home} alt="" className={'home'}/>
-        <img src={catalog} alt="" className={'catalog'}/>
+        <NavLink to={"/"}> 
+          <img src={home} alt="" className={'home'}/>
+        </NavLink>
+        <NavLink to={"/catalog"}> 
+          <img src={catalog} alt="" className={'catalog'}/>
+        </NavLink>
         <img src={shoping} alt="" className={'logo'}/>
-      
       </nav>
     </header>
   );

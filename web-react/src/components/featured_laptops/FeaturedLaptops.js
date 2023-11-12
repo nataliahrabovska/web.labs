@@ -34,29 +34,18 @@ const FeaturedLaptops = () => {
     <div className="featured-laptops">
       <h3>Best Seller</h3>
       <ul>
-        <LaptopCard
-          model={laptops[0].model}
-          properties={laptops[0].properties}
-          price = {laptops[0].price}
-        />
-        <LaptopCard
-          model={laptops[1].model}
-          properties={laptops[1].properties}
-          price = {laptops[1].price}
-        />
-        <LaptopCard
-          model={laptops[2].model}
-          properties={laptops[2].properties}
-          price = {laptops[2].price}
-        />
-        <LaptopCard
-          model={laptops[3].model}
-          properties={laptops[3].properties}
-          price = {laptops[3].price}
-        />
+        {laptops.map(laptop => (
+          <LaptopCard
+            key={laptop.id}
+            model={laptop.model}
+            properties={laptop.properties}
+            price={laptop.price}
+          />
+        ))}
       </ul>
     </div>
   );
 };
+
 
 export default FeaturedLaptops;
