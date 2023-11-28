@@ -16,4 +16,9 @@ button {
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.catalog-cards{
+    width: 100%;
 }

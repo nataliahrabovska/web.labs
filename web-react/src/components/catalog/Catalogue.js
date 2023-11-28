@@ -1,79 +1,108 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CatalogueCards from './CatalogueCards';
-import Filters from "./Filters"
+import Loader from '../loader/Loader';
+import Filters from './Filters';
 import './Catalogue.css';
-
-const laptops_catalog = [
-    {
-        id: 1,
-        model: "HP",
-        properties: "15-dw1015ua (2F3G3EA) Silver",
-        price: 900
-    },
-    {
-        id: 2,
-        model: "Dell",
-        properties: "Inspiron 3530",
-        price: 870
-    },
-    {
-        id: 3,
-        model: "MacBook",
-        properties: "Air 13 256GB Space Gray",
-        price: 1200
-    },
-    {
-        id: 4,
-        model: "Asus",
-        properties: "TUF Gaming F15",
-        price: 1010
-    },
-    {
-        id: 5,
-        model: "HP",
-        properties: "15-dw1015ua (2F3G3EA) Silver",
-        price: 900
-    },
-    {
-        id: 6,
-        model: "Dell",
-        properties: "Inspiron 3530",
-        price: 870
-    },
-    {
-        id: 7,
-        model: "MacBook",
-        properties: "Air 13 256GB Space Gray",
-        price: 1200
-    },
-    {
-        id: 8,
-        model: "Asus",
-        properties: "TUF Gaming F15",
-        price: 1010
-    }
-]
+import { getFilteredLaptops, getLaptops } from '../../services/fetchService';
 
 const Catalogue = () => {
-    return (
-        <div className="catalogue-laptops">
-            <div className='head'>
-                <h3>Catalogue</h3>
-                <Filters/>
-            </div>
-                <div className="cards-container">
-                    {laptops_catalog.map(laptops_catalog => (
-                        <CatalogueCards
-                            key={laptops_catalog.id}
-                            model={laptops_catalog.model}
-                            properties={laptops_catalog.properties}
-                            price={laptops_catalog.price}
-                        />
-                    ))}
-                </div>
-        </div>
+  const [laptops_catalog, setLaptops_catalog] = useState([]);
+  const [filteredLaptops, setFilteredLaptops] = useState(laptops_catalog);
+  const [itemsToShow, setItemsToShow] = useState(4);
+  const [modelSeacrh, setModelSeacrh] = useState('');
+  const [filterF, setFilterF] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoaded(false);
+        const data = await getLaptops();
+        setLaptops_catalog(data);
+        setFilteredLaptops(data);
+        setIsLoaded(true);
+      } catch (error) {
+        console.error(error);
+        setIsLoaded(true);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (modelSeacrh === '') {
+      setFilteredLaptops(laptops_catalog);
+    }
+  }, [modelSeacrh, laptops_catalog]);
+
+  const handleApplyFilter = async (filters = {}) => {
+    setIsLoaded(false);
+    let filteredData = null;
+    try {
+      filteredData = await getFilteredLaptops(filters);
+    } catch (error) {
+      console.error(error);
+    }
+
+    setFilteredLaptops(filteredData || []);
+    setItemsToShow(4);
+    setIsLoaded(true);
+  };
+
+  const handleModelSearchChange = async (e) => {
+    const newModelSearch = e.target.value.toLowerCase();
+    setModelSeacrh(newModelSearch);
+
+    let filteredData = null;
+    await getFilteredLaptops(filterF).then((data) => {
+      filteredData = data;
+    });
+
+    const filteredByModel = laptops_catalog.filter((laptop) =>
+      laptop.model.toLowerCase().includes(newModelSearch)
     );
+
+    const companySearchFilter = newModelSearch.toLowerCase();
+    const filteredByCompany = filteredData.filter((laptop) =>
+      laptop.model.toLowerCase().includes(companySearchFilter)
+    );
+    setFilteredLaptops(filteredByCompany);
+    setItemsToShow(4);
+  };
+
+  return (
+    <div className="catalogue-laptops">
+      <div className="head">
+        <h3>Catalogue</h3>
+        <input
+          className={'model'}
+          type={'text'}
+          placeholder={'Search by model'}
+          value={modelSeacrh}
+          onChange={handleModelSearchChange}
+        />
+        <Filters onApplyFilter={handleApplyFilter} />
+      </div>
+      <div className="cards-container">
+        {!isLoaded ? (
+          <Loader />
+        ) : (
+          filteredLaptops.map((laptop) => (
+            <CatalogueCards
+              key={laptop.id}
+              id={laptop.id}
+              company={laptop.company}
+              model={laptop.model}
+              properties={laptop.properties}
+              price={laptop.price}
+              screenSize={laptop.screenSize}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Catalogue;
-

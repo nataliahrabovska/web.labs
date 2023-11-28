@@ -1,13 +1,14 @@
 import React from 'react';
-import './ButtonViewMore.css'
+import './ButtonViewMore.css';
 
-
-const ButtonViewMore = () => {
+const ButtonViewMore = ({ onClick }) => {
     return (
-        <div className="button">
-            <button>View More</button>
-        </div>
+      <div className="button">
+        <button type="button" onClick={onClick}>
+          View More
+        </button>
+      </div>
     );
   };
-  
-  export default ButtonViewMore;
+
+export default ButtonViewMore;

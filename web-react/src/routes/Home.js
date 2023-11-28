@@ -7,7 +7,6 @@ function Home () {
         <>
             <Banner />
             <FeaturedLaptops/>
-            <ButtonViewMore/> 
         </>
     )
 }

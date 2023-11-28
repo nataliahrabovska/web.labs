@@ -4,6 +4,7 @@
     display: flex;
     padding: 0;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .featured-laptops {
@@ -11,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .featured-laptops h3 {
@@ -19,3 +21,4 @@
     font-size: 2rem;
     font-weight: 500;
 }
+

@@ -11,15 +11,15 @@ const Footer = () => {
     return (
         <div className="footer">
             <footer>
-                <div class="footer">
-                    <div class="row">
+                <div className="footer">
+                    <div className="row">
                         <a href="#"><img src={facebook}/></a>
                         <a href="#"><img src={instagram}/></a>
                         <a href="#"><img src={youtube}/></a>
                         <a href="#"><img src={twitter}/></a>
                     </div>
 
-                    <div class="row">
+                    <div className="row">
                         <ul>
                             <li><a href="#">Contact us</a></li>
                             <li><a href="#">Our Services</a></li>
@@ -29,7 +29,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div class="row">
+                    <div className="row">
                         INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
                     </div>
                 </div>

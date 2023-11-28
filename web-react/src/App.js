@@ -6,6 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Laptop from './components/laptops_page/Laptop';
 
 const routes = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const routes = createBrowserRouter([
         {
           path:"/catalog",
           element:<Catalog/>
+        },
+        {
+            path:"/laptop/:id",
+            element:<Laptop/>
         }
     ]
   }
