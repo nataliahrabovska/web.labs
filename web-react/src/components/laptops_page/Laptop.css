@@ -5,22 +5,39 @@
     padding-top: 2rem;
     margin-left: 3rem;
   }
-  
+  .header-laptop {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-cart {
+    background-color: white;
+    border: silver 1px solid;
+    border-radius: 10px;
+    position: fixed; /* Use fixed position */
+    top: 10%; /* Adjust top position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 10px;
+    text-align: center;
+}
+
+
   .laptop-details {
     float: left;
   }
-  
+
   .clearfix::after {
     content: '';
     display: table;
     clear: both;
     width: 100%;
   }
-  
+
   .center-container {
     text-align: start; /* Center the content horizontally */
   }
-  
+
   /* Apply margin and width to the container */
   .center-container > div {
     margin: 0 auto;
@@ -37,7 +54,7 @@
     border-radius: 10px;
     transition: background-color 0.3s ease;
   }
-  
+
   .button-link:hover {
     background-color: #cd593c; /* Set your desired hover background color */
   }
